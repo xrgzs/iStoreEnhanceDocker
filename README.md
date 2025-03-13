@@ -1,0 +1,2 @@
+# iStoreEnhanceDocker
+将iStoreEnhance打包成Docker镜像，方便在非iStoreOS设备上使用
