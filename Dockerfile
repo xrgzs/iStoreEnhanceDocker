@@ -15,6 +15,10 @@ RUN tar -xzvf istoreenhance.ipk && \
 FROM alpine:3
 WORKDIR /usr/sbin
 COPY --from=downloader /target/usr/sbin/ .
-CMD [ "iStoreEnhance" ]
+RUN mkdir -p /usr/share/iStoreEnhance
+ENV ADMIN_ADDR=5003
+ENV CACHE_PATH=/usr/share/iStoreEnhance
+ENV LOCAL_ADDR=5443
+CMD [ "sh", "-c", "iStoreEnhance -adminAddr ${ADMIN_ADDR} -cachePath ${CACHE_PATH} -localAddr ${LOCAL_ADDR}" ]
 EXPOSE 5003 5443
 VOLUME [ "/usr/share/iStoreEnhance" ]
