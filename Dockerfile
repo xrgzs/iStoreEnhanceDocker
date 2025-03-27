@@ -3,9 +3,9 @@ ARG BUILDARCH
 WORKDIR /tmp
 # RUN sed -i 's#https\?://dl-cdn.alpinelinux.org/alpine#https://mirrors.aliyun.com/alpine#g' /etc/apk/repositories
 RUN apk --no-cache add tar gzip
-RUN url="https://istore.istoreos.com/repo/x86_64/nas/istoreenhance_0.2.0-x86_64-1_x86_64.ipk" && \
+RUN url="https://istore.istoreos.com/repo/x86_64/nas/istoreenhance_0.2.6-x86_64-1_x86_64.ipk" && \
     if [ "$BUILDARCH" == "arm64" ]; then \
-        url="https://istore.istoreos.com/repo/aarch64_cortex-a53/nas/istoreenhance_0.2.0-aarch64-1_aarch64_cortex-a53.ipk"; \
+        url="https://istore.istoreos.com/repo/aarch64_cortex-a53/nas/istoreenhance_0.2.6-aarch64-1_aarch64_cortex-a53.ipk"; \
     fi && \
     wget -O istoreenhance.ipk "$url"
 RUN tar -xzvf istoreenhance.ipk && \
