@@ -21,11 +21,13 @@ Docker Compose：
 name: istoreenhance
 services:
   istoreenhance:
-    image: ghcr.io/xrgzs/istoreenhance:main
+    image: m.ixdev.cn/ghcr.io/xrgzs/istoreenhance:main
     container_name: iStoreEnhance
     ports:
       - "5003:5003" # 管理面板
       - "5443:5443" # 注册表镜像
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       - ./data:/usr/share/iStoreEnhance
     restart: always
