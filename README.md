@@ -1,3 +1,5 @@
+官方已独立发布，此仓库作废：https://kspeeder.istoreos.com/
+
 # iStore 增强 Docker iStoreEnhanceDocker
 
 此项目将 iStore 增强 的 IPK 打包成 Docker 镜像，方便在非 iStoreOS 设备上使用。
